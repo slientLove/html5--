@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>html5新特性</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div id="box" class="div1 div2 div3">1121</div>
+	<script>
+		window.onload = function(){
+		// var oDiv = document.getElementById('box');
+		// var str = "function show(){ alert('1')}";
+
+		// eval 可以对任何语句进行解析，使其有一定安全隐患
+		// eval(str);
+		//show();
+
+		var str = '{"name":"hello"}';
+		/* JSON能对json形式的数据进行转换，严格模式下数据要加引号
+		*	这样不会解析恶意代码
+		*/
+		var json = JSON.parse(str);
+		//alert(json.name);
+
+
+		//会解析出完整的json数据格式，并且会自动加上引号，注意JSON要大写
+		var json  =JSON.stringify(str);
+		alert(json);
+		}
+	</script>
+</body>
+</html>

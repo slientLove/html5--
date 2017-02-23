@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>html5新特性</title>
+	<style>
+		#box{ width: 500px;height: 50px; border: 1px solid red;}
+	</style>
+</head>
+<body>
+	<div id="box" class="div1">1121</div>
+	<div id="div2" class="div1">1212</div>
+	<script>
+		/*
+		*	querySelector只能选择一组元素中的第一个
+		*	querySelectorAll能选择一组元素
+		*
+		**/
+		window.onload = function(){
+
+			var oDiv = document.querySelectorAll('.div1');
+
+			//利用title属性也能进行元素选择
+			//var oDiv1 =document.querySelector('[title = hello]');
+			//var oDiv = document.getElementById('box');  // ById不能加#
+
+			//此时选出的元素是一个集合，需要进行循环遍历
+			for(var i=0;i<oDiv.length;i++){
+				oDiv[i].style.background = "red";
+			}
+		}
+	</script>
+</body>
+</html>

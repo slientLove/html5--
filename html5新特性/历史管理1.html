@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>html5新特性</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div id="box" data-title-js="自定义">1121</div>
+	<input id="btn" type="button" value="切换">
+	<script>
+
+		window.onload = function(){
+			var oDiv = document.getElementById('box');
+			var oBtn = document.getElementById('btn');
+
+			var json = {};	//首先进行json声明
+			btn.onclick = function(){
+				var arr = randomData(30,6);
+
+			// 在不刷新页面的情况下，改变 hash值
+
+			//第三个参数是可选的，可以在后面显示出来
+				history.pushState(arr,'','');  
+				oDiv.innerHTML = arr;       //   是innerHTML
+			}
+
+		window.onpopstate = function(ev){
+			oDiv.innerHTML = ev.state;
+		}
+		
+			function randomData(iAll,iNow){
+				var arr = [];
+				var newArr = [];
+				for(var i=0;i<iAll;i++){
+					arr.push(i);
+				}
+			for(var i=0;i<iNow;i++){
+			newArr.push(arr.splice(Math.floor(Math.random()*arr.length),1));	
+				}		
+				return newArr;
+			}
+		
+	}
+	</script>
+</body>
+</html>

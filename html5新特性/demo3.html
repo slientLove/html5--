@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>html5新特性</title>
+	<style>
+		#box{ width: 500px;height: 50px; border: 1px solid red;}
+	</style>
+</head>
+<body>
+	<div id="box" class="div1">1121</div>
+	<div id="div2" class="div1">1212</div>
+	<script>
+		
+		window.onload = function(){
+
+		//html5新增加的 取类 选择器
+			var oDiv = document.getElementsByClassName('div1');
+		//是一个集合，需要进行循环遍历
+			for(var i=0;i<oDiv.length;i++){
+				oDiv[i].style.background = "red";
+			}
+		}
+	</script>
+</body>
+</html>

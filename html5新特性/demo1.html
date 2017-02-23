@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>html5新特性</title>
+	<style>
+		#box{ width: 500px;height: 50px; border: 1px solid red;}
+	</style>
+</head>
+<body>
+	<div id="box" class="div1">11</div>
+	<div id="div2" title="hello">1212</div>
+	<script>
+		/*
+		*	querySelector只能选择一组元素中的第一个
+		*
+		**/
+		window.onload = function(){
+			//利用 querySelector可以进行元素选择
+			//var oDiv = document.querySelector('#box');
+
+			var oDiv = document.querySelector('.div1');
+
+			//利用title属性也能进行元素选择
+			var oDiv1 =document.querySelector('[title = hello]');
+			//var oDiv = document.getElementById('box');  // ById不能加#
+			oDiv1.style.background = 'red';
+		}
+	</script>
+</body>
+</html>

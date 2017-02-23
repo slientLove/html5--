@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>html5新特性</title>
+	<style>
+		ul{ list-style-type: none;margin: 20px auto; }
+		ul li{ margin: 10px;background: red; width: 100px;height: 50px;}
+	div{ width: 100px;height: 100px;background: yellow; }
+	</style>
+</head>
+<body>
+	<ul>
+		<li dragable="true"></li>
+		<li dragable="true"></li>
+		<li dragable="true"></li>
+		<li dragable="true"></li>
+	</ul>
+	<div id="box" data-title-js="自定义">1121</div>
+	<script>
+			/*
+				拖拽元素发生属性
+			*/
+		window.onload = function(){
+			var oLi = document.getElementsByTagName('li');
+			var oDiv = document.getElementById('box');
+			for(var i=0;i<oLi.length;i++){
+				//oLi[i].style.background = "green";
+
+				//拖拽开始时发生的颜色
+				oLi[i].ondragstart = function(){
+				 	this.style.background = "green";
+				 }
+
+				//拖拽过程中发生颜色变化
+				oLi[i].ondrag = function(){
+					this.style.background = "orange";
+				}
+				//拖拽结束时发生的颜色
+				oLi[i].ondragend = function(){
+				 	this.style.background = "yellow";
+				}
+
+			}
+
+			// 拖拽进入div和出div时的颜色变化
+			oDiv.ondragenter = function(){
+				this.style.background = 'orange';
+			}
+			oDiv.ondragover = function(ev){
+				// 阻止默认事件
+				ev.preventDefault();
+			}
+			oDiv.ondragleave = function(){
+				this.style.background = 'yellow';
+			}
+			// 拖拽进入发生情况
+			oDiv.ondrop = function(){
+			}
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题绘图</title>
+	<style>
+		#c1{ background: green; }
+	</style>
+</head>
+<body>
+<canvas id="c1" width="500px" height="300px">				<!-- 默认宽高分别为300 150 -->
+	
+</canvas>
+</body>
+	<script>
+		window.onload = function(){
+			var oCanvas = document.getElementById('c1');
+
+			//  声明一个绘图环境
+			var oContext = oCanvas.getContext('2d');
+
+			oContext.beginPath();		//路径开始
+
+			//画出一个三角形
+			oContext.moveTo(50,50);
+			oContext.lineTo(100,200);
+			oContext.lineTo(200,200);
+
+			//路径结束属性不仅能结束绘图，而且能连接首末尾
+			oContext.closePath();
+
+			//填充边经，显现出边框
+			//oContext.stroke();
+
+			//进行填充
+			oContext.fill();
+
+
+		//每次开始都是独立绘图，互不影响
+			oContext.beginPath();		//路径开始
+
+			//画出一个三角形
+			oContext.moveTo(50,50);
+			oContext.lineTo(300,100);
+			oContext.lineTo(300,250);
+
+			//路径结束属性不仅能结束绘图，而且能连接首末尾
+			oContext.closePath();
+
+			//填充边经，显现出边框
+			oContext.stroke();
+
+		}
+	</script>
+</html>

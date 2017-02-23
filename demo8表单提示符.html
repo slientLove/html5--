@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>表单控件</title>
+</head>
+<body>
+	<!-- 表单中各种控件的用法 -->
+	<form>
+		<input type="text" placeholder="请输入4到10个字符" required="required">		<!-- required是必填字段 -->
+
+	<!-- 引入正则表达式，也可以对输入进行限制，但写在行间时可能会被破解掉-->
+		<input type="text" pattern="\d{1,5}">
+		<input type="password" placeholder="请输入5到10个字符" name="password" autocomplete="off" autofocus="on">
+		<!-- autofocus属性可以进行进行焦点设置-->
+		<input type="submit">
+	</form>
+</body>
+</html>
